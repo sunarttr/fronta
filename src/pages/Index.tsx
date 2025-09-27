@@ -130,7 +130,7 @@ const Index = () => {
             {[
               {
                 step: "01",
-                title: "Hesabını Bağla",
+                title: "İletişim kanallarını bağla",
                 description: "Shopify veya İkas hesabını bağla"
               },
               {
