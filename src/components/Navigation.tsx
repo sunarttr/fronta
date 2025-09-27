@@ -47,15 +47,14 @@ const Navigation = () => {
     <header
       className={`fixed top-3.5 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 rounded-full ${
         isScrolled 
-          ? "h-14 glass scale-95 w-[90%] max-w-2xl" 
-          : "h-14 glass w-[95%] max-w-3xl"
+          ? "h-14 bg-white/90 backdrop-blur-md border border-gray-200 scale-95 w-[90%] max-w-2xl shadow-sm" 
+          : "h-14 bg-white/90 backdrop-blur-md border border-gray-200 w-[95%] max-w-3xl shadow-sm"
       }`}
     >
       <div className="mx-auto h-full px-6">
         <nav className="flex items-center justify-between h-full">
           <div className="flex items-center gap-2">
-            <Command className="w-5 h-5 text-primary" />
-            <span className="font-bold text-base">Asisteye</span>
+            <span className="font-semibold text-lg text-gray-900">Asisteye</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -70,7 +69,7 @@ const Navigation = () => {
                     item.onClick();
                   }
                 }}
-                className="text-sm text-muted-foreground hover:text-foreground transition-all duration-300"
+                className="text-sm text-gray-600 hover:text-gray-900 transition-all duration-300"
               >
                 {item.name}
               </a>
@@ -81,17 +80,17 @@ const Navigation = () => {
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className="glass">
+                <Button variant="outline" size="icon" className="bg-white border-gray-200">
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-                <SheetContent className="glass">
+                <SheetContent className="bg-white">
                   <div className="flex flex-col gap-4 mt-8">
                   {navItems.map((item) => (
                     <a
                       key={item.name}
                       href={item.href}
-                      className="text-lg text-muted-foreground hover:text-foreground transition-colors"
+                      className="text-lg text-gray-600 hover:text-gray-900 transition-colors"
                       onClick={(e) => {
                         e.preventDefault();
                         setIsMobileMenuOpen(false);
