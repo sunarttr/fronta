@@ -12,7 +12,12 @@ const LogoCarousel = () => {
   const extendedLogos = [...logos, ...logos, ...logos];
 
   return (
-    <div className="w-full overflow-hidden bg-background/50 backdrop-blur-sm py-12 mt-20">
+    <div className="w-full overflow-hidden glass py-12 mt-20">
+      <div className="container px-4 text-center mb-8">
+        <p className="text-sm font-medium text-muted-foreground">
+          100+ mağaza güvenle kullanıyor
+        </p>
+      </div>
       <motion.div 
         className="flex space-x-16"
         initial={{ opacity: 0, x: "0%" }}
@@ -39,7 +44,7 @@ const LogoCarousel = () => {
           <motion.img
             key={`logo-${index}`}
             src={logo}
-            alt={`Partner logo ${index + 1}`}
+            alt={`Partner mağaza logosu ${index + 1}`}
             className="h-8 object-contain"
             initial={{ opacity: 0.5 }}
             whileHover={{ 

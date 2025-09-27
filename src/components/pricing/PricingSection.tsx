@@ -26,19 +26,19 @@ const PricingTier = ({
       <h3 className="text-xl font-medium mb-2">{name}</h3>
       <div className="mb-4">
         <span className="text-4xl font-bold">{price}</span>
-        {price !== "Custom" && <span className="text-gray-400">/month</span>}
+        {price !== "Özel" && <span className="text-muted-foreground">/ay</span>}
       </div>
-      <p className="text-gray-400 mb-6">{description}</p>
+      <p className="text-muted-foreground mb-6">{description}</p>
       <ul className="space-y-3 mb-8 flex-grow">
         {features.map((feature, index) => (
           <li key={index} className="flex items-center gap-2">
             <Check className="w-5 h-5 text-primary" />
-            <span className="text-sm text-gray-300">{feature}</span>
+            <span className="text-sm text-muted-foreground">{feature}</span>
           </li>
         ))}
       </ul>
       <Button className="button-gradient w-full">
-        Start Trading
+        Hemen Başla
       </Button>
     </div>
   </CardSpotlight>
@@ -54,55 +54,55 @@ export const PricingSection = () => {
           transition={{ duration: 0.5 }}
           className="text-5xl md:text-6xl font-normal mb-6"
         >
-          Choose Your{" "}
-          <span className="text-gradient font-medium">Trading Plan</span>
+          WhatsApp Satış{" "}
+          <span className="text-gradient font-medium">Planları</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.5 }}
-          className="text-lg text-gray-400"
+          className="text-lg text-muted-foreground"
         >
-          Select the perfect trading plan with advanced features and competitive fees
+          Size uygun planı seçin ve WhatsApp'ta satışlarınızı otomatikleştirin
         </motion.p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         <PricingTier
-          name="Basic Trader"
-          price="$0"
-          description="Perfect for beginners starting their crypto journey"
+          name="Başlangıç"
+          price="₺0"
+          description="WhatsApp otomasyonuna ilk adım"
           features={[
-            "Basic spot trading",
-            "Market & limit orders",
-            "Basic market analysis",
-            "Email support"
+            "Aylık 1.000 mesaj",
+            "Temel sepet hatırlatma",
+            "Sipariş durumu sorguları",
+            "E-posta desteği"
           ]}
         />
         <PricingTier
-          name="Pro Trader"
-          price="$29"
-          description="Advanced features for serious traders"
+          name="Büyüme"
+          price="₺299"
+          description="Gelişmiş özelliklerle satışları artırın"
           features={[
-            "Advanced trading tools",
-            "Margin trading up to 10x",
-            "Advanced technical analysis",
-            "Priority support",
-            "API access"
+            "Aylık 10.000 mesaj",
+            "Gelişmiş otomasyon akışları",
+            "Segment bazlı kampanyalar",
+            "Analitik raporları",
+            "WhatsApp desteği"
           ]}
           isPopular
         />
         <PricingTier
-          name="Institutional"
-          price="Custom"
-          description="Enterprise-grade solutions for institutions"
+          name="Kurumsal"
+          price="Özel"
+          description="Büyük e-ticaret siteleri için çözüm"
           features={[
-            "Custom trading solutions",
-            "Unlimited trading volume",
-            "OTC desk access",
-            "Dedicated account manager",
-            "Custom API integration",
-            "24/7 priority support"
+            "Sınırsız mesaj",
+            "Özel entegrasyonlar",
+            "Özel müşteri temsilcisi",
+            "SLA garantisi",
+            "7/24 telefon desteği",
+            "KVKK danışmanlığı"
           ]}
         />
       </div>
