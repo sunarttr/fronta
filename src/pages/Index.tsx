@@ -1,19 +1,20 @@
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-white text-gray-900 font-poppins">
+  return <div className="min-h-screen bg-white text-gray-900 font-poppins">
       <Navigation />
       
       {/* Hero Section */}
-      <motion.section 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="container px-4 pt-40 pb-20"
-      >
+      <motion.section initial={{
+      opacity: 0,
+      y: 20
+    }} animate={{
+      opacity: 1,
+      y: 0
+    }} transition={{
+      duration: 0.5
+    }} className="container px-4 pt-40 pb-20">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-light mb-6 tracking-tight">
             <span className="text-gray-600">
@@ -25,12 +26,15 @@ const Index = () => {
             </span>
           </h1>
           
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="text-lg md:text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
-          >
+          <motion.p initial={{
+          opacity: 0,
+          y: 20
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          delay: 0.4
+        }} className="text-lg md:text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
             Asisteye ile 12 hazır akış, anında politika eğitimi ve Shopify & İkas uyumluluğu.{" "}
             <span className="text-gray-900 font-medium">CX'i uçtan uca otomatikleştir, müşterinin yaşam boyu değerini artır.</span>
           </motion.p>
@@ -40,12 +44,15 @@ const Index = () => {
       {/* Product Benefits Section */}
       <section className="container px-4 py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.5
+        }} className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-light mb-6 text-gray-900">
               Neden Asisteye?
             </h2>
@@ -55,12 +62,16 @@ const Index = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              className="bg-white rounded-2xl p-8 text-center"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            delay: 0.1,
+            duration: 0.5
+          }} className="bg-white rounded-2xl p-8 text-center">
               <div className="w-16 h-16 mx-auto mb-6 bg-green-100 rounded-full flex items-center justify-center">
                 <div className="w-8 h-8 bg-green-500 rounded-full"></div>
               </div>
@@ -72,12 +83,16 @@ const Index = () => {
               </p>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="bg-white rounded-2xl p-8 text-center"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            delay: 0.2,
+            duration: 0.5
+          }} className="bg-white rounded-2xl p-8 text-center">
               <div className="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center">
                 <div className="w-8 h-8 bg-blue-500 rounded-full"></div>
               </div>
@@ -89,12 +104,16 @@ const Index = () => {
               </p>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              className="bg-white rounded-2xl p-8 text-center"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            delay: 0.3,
+            duration: 0.5
+          }} className="bg-white rounded-2xl p-8 text-center">
               <div className="w-16 h-16 mx-auto mb-6 bg-purple-100 rounded-full flex items-center justify-center">
                 <div className="w-8 h-8 bg-purple-500 rounded-full"></div>
               </div>
@@ -107,12 +126,16 @@ const Index = () => {
             </motion.div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-            className="mt-12 bg-white rounded-2xl p-8"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          delay: 0.4,
+          duration: 0.5
+        }} className="mt-12 bg-white rounded-2xl p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-2xl font-semibold mb-4 text-gray-900">
@@ -155,54 +178,86 @@ const Index = () => {
       {/* Features Section */}
       <section className="container px-4 py-20">
         <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.5
+        }} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light mb-4 text-gray-900">Özellikler</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* 12 Hazır Flow */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              className="bg-gray-50 rounded-2xl p-8"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            delay: 0.1,
+            duration: 0.5
+          }} className="bg-gray-50 rounded-2xl p-8">
               <h3 className="text-2xl font-semibold mb-6 text-gray-900">12 Hazır Flow</h3>
               <div className="space-y-4">
-                {[
-                  { title: "Sepet Hatırlatma", desc: "Sepetinde ürün bırakan müşteriyi geri çağırır" },
-                  { title: "Post-Purchase", desc: "Sipariş sonrası teşekkür & ek satış" },
-                  { title: "Winback", desc: "Uzun süredir alışveriş yapmayanları geri kazanır" },
-                  { title: "Back-in-Stock", desc: "Ürün stoğa gelince bildirim" },
-                  { title: "Review Request", desc: "Teslimat sonrası yorum daveti" },
-                  { title: "Shipped", desc: "Sipariş kargoya verilince bilgilendirme" },
-                  { title: "Cross-Sell", desc: "Alınan ürüne uygun ek ürün önerisi" },
-                  { title: "Price Drop", desc: "Ürünün fiyatı düştüğünde bilgi" },
-                  { title: "Low Stock", desc: "Ürün tükenmek üzereyken uyarı" },
-                  { title: "LTV Reminder", desc: "Düzenli alışveriş hatırlatması" },
-                  { title: "Event Reminder", desc: "Etkinlik yaklaşırken hatırlatma" },
-                  { title: "Onboarding", desc: "İlk sipariş sonrası yönlendirme & destek" }
-                ].map((flow, index) => (
-                  <div key={index} className="border-l-3 border-green-500 pl-4">
+                {[{
+                title: "Sepet Hatırlatma",
+                desc: "Sepetinde ürün bırakan müşteriyi geri çağırır"
+              }, {
+                title: "Post-Purchase",
+                desc: "Sipariş sonrası teşekkür & ek satış"
+              }, {
+                title: "Winback",
+                desc: "Uzun süredir alışveriş yapmayanları geri kazanır"
+              }, {
+                title: "Back-in-Stock",
+                desc: "Ürün stoğa gelince bildirim"
+              }, {
+                title: "Review Request",
+                desc: "Teslimat sonrası yorum daveti"
+              }, {
+                title: "Shipped",
+                desc: "Sipariş kargoya verilince bilgilendirme"
+              }, {
+                title: "Cross-Sell",
+                desc: "Alınan ürüne uygun ek ürün önerisi"
+              }, {
+                title: "Price Drop",
+                desc: "Ürünün fiyatı düştüğünde bilgi"
+              }, {
+                title: "Low Stock",
+                desc: "Ürün tükenmek üzereyken uyarı"
+              }, {
+                title: "LTV Reminder",
+                desc: "Düzenli alışveriş hatırlatması"
+              }, {
+                title: "Event Reminder",
+                desc: "Etkinlik yaklaşırken hatırlatma"
+              }, {
+                title: "Onboarding",
+                desc: "İlk sipariş sonrası yönlendirme & destek"
+              }].map((flow, index) => <div key={index} className="border-l-3 border-green-500 pl-4">
                     <h4 className="font-medium text-gray-900">{flow.title}</h4>
                     <p className="text-sm text-gray-600">{flow.desc}</p>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </motion.div>
 
             {/* Other Features */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="space-y-8"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            delay: 0.2,
+            duration: 0.5
+          }} className="space-y-8">
               <div className="bg-gray-50 rounded-2xl p-8">
                 <h3 className="text-2xl font-semibold mb-4 text-gray-900">Politikalarla Anında Eğitim</h3>
                 <p className="text-gray-600 leading-relaxed">
@@ -229,99 +284,52 @@ const Index = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="container px-4 py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-light mb-4 text-gray-900">Nasıl Çalışır</h2>
-            <p className="text-lg text-gray-600">3 basit adımda başla</p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                step: "01",
-                title: "İletişim kanallarını bağla",
-                description: "Shopify veya İkas hesabını bağla"
-              },
-              {
-                step: "02", 
-                title: "Politikalarını Yükle",
-                description: "İade, kargo, gizlilik politikalarını sisteme yükle"
-              },
-              {
-                step: "03",
-                title: "Akışları Aktif Et",
-                description: "WhatsApp & Instagram'da 12 akışı aktif et"
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="text-center bg-white rounded-2xl p-8"
-              >
-                <div className="text-3xl font-light text-green-500 mb-4">{item.step}</div>
-                <h3 className="text-xl font-semibold mb-4 text-gray-900">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Added Value Section */}
       <section className="container px-4 py-20">
         <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.5
+        }} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light mb-4 text-gray-900">Katma Değer</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              {
-                title: "CX Otomasyonu",
-                description: "Tek bir AI asistan tüm mesajları yönetir"
-              },
-              {
-                title: "LTV Artışı", 
-                description: "Sepet kurtarma + winback → müşteri değeri yükselir"
-              },
-              {
-                title: "Omni-channel Uyum",
-                description: "WhatsApp & Instagram tek panelden yönetilir"
-              },
-              {
-                title: "Kolay Kurulum",
-                description: "Dakikalar içinde aktif"
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="bg-gray-50 rounded-2xl p-8 text-center"
-              >
+            {[{
+            title: "CX Otomasyonu",
+            description: "Tek bir AI asistan tüm mesajları yönetir"
+          }, {
+            title: "LTV Artışı",
+            description: "Sepet kurtarma + winback → müşteri değeri yükselir"
+          }, {
+            title: "Omni-channel Uyum",
+            description: "WhatsApp & Instagram tek panelden yönetilir"
+          }, {
+            title: "Kolay Kurulum",
+            description: "Dakikalar içinde aktif"
+          }].map((item, index) => <motion.div key={index} initial={{
+            opacity: 0,
+            y: 20
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            delay: index * 0.1,
+            duration: 0.5
+          }} className="bg-gray-50 rounded-2xl p-8 text-center">
                 <h3 className="text-xl font-semibold mb-3 text-gray-900">{item.title}</h3>
                 <p className="text-gray-600">{item.description}</p>
-              </motion.div>
-            ))}
+              </motion.div>)}
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
