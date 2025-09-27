@@ -1,11 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Command } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Command, MessageSquare, Settings, Zap, ShoppingBag, BarChart3, Layers, CheckCircle } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import { FeaturesSection } from "@/components/features/FeaturesSection";
-import { PricingSection } from "@/components/pricing/PricingSection";
-import LogoCarousel from "@/components/LogoCarousel";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
@@ -34,18 +30,18 @@ const Index = () => {
         >
           <span className="text-sm font-medium text-primary">
             <Command className="w-4 h-4 inline-block mr-2" />
-            WhatsApp Business API Resmi Ortağı
+            KVKK uyumlu · Resmi WhatsApp & Instagram Business API
           </span>
         </motion.div>
         
         <div className="max-w-4xl relative z-10">
           <h1 className="text-5xl md:text-7xl font-normal mb-4 tracking-tight text-left">
             <span className="text-gray-600">
-              <TextGenerateEffect words="WhatsApp'ta satış ve desteği" />
+              <TextGenerateEffect words="WhatsApp ve Instagram'da" />
             </span>
             <br />
             <span className="text-foreground font-medium">
-              <TextGenerateEffect words="yapay zekâ ile otomatikleştir" />
+              <TextGenerateEffect words="müşteri deneyimini otomatikleştir" />
             </span>
           </h1>
           
@@ -55,23 +51,9 @@ const Index = () => {
             transition={{ delay: 0.4 }}
             className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl text-left"
           >
-            Shopify verinizi anlayan AI asistan ile sepete bırakma, winback ve anında destek akışlarını yönetin.{" "}
-            <span className="text-foreground font-medium">Dakikalar içinde kurulum.</span>
+            Asisteye ile 12 hazır akış, anında politika eğitimi ve Shopify & İkas uyumluluğu.{" "}
+            <span className="text-foreground font-medium">CX'i uçtan uca otomatikleştir, müşterinin yaşam boyu değerini artır.</span>
           </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="flex flex-col sm:flex-row gap-4 items-start"
-          >
-            <Button size="lg" className="button-gradient">
-              Hemen Başla
-            </Button>
-            <Button size="lg" variant="link" className="text-primary">
-              WhatsApp'tan Yaz <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-          </motion.div>
         </div>
 
         <motion.div
@@ -90,51 +72,120 @@ const Index = () => {
         </motion.div>
       </motion.section>
 
-      {/* Logo Carousel */}
-      <LogoCarousel />
-
       {/* Features Section */}
       <div id="features" className="bg-background">
         <FeaturesSection />
       </div>
 
-      {/* Pricing Section */}
-      <div id="pricing" className="bg-background">
-        <PricingSection />
-      </div>
-
-      {/* Testimonials Section */}
-      <div className="bg-background">
-        <TestimonialsSection />
-      </div>
-
-      {/* CTA Section */}
-      <section className="container px-4 py-20 relative bg-background">
-        <div 
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: 'url("/lovable-uploads/21f3edfb-62b5-4e35-9d03-7339d803b980.png")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
+      {/* How It Works Section */}
+      <section className="container px-4 py-20 bg-background">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="glass rounded-2xl p-8 md:p-12 text-center relative z-10"
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-            WhatsApp satış otomasyonuna hazır mısınız?
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            100+ e-ticaret mağazasının güvenle kullandığı platformumuzla tanışın.
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Nasıl Çalışır</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            3 basit adımda WhatsApp ve Instagram'da müşteri deneyimi otomasyonunu başlatın
           </p>
-          <Button size="lg" className="button-gradient">
-            Hemen Başla
-            <ArrowRight className="ml-2 w-4 h-4" />
-          </Button>
         </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          {[
+            {
+              step: "1",
+              title: "Hesabını Bağla",
+              description: "Shopify veya İkas hesabını bağla",
+              icon: <Layers className="w-8 h-8" />
+            },
+            {
+              step: "2", 
+              title: "Politikaları Yükle",
+              description: "İade, kargo, gizlilik politikalarını yükle",
+              icon: <Settings className="w-8 h-8" />
+            },
+            {
+              step: "3",
+              title: "Akışları Aktif Et",
+              description: "WhatsApp & Instagram'da 12 flow'u aktif et → AI müşterilere anında yanıt versin",
+              icon: <CheckCircle className="w-8 h-8" />
+            }
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              className="text-center"
+            >
+              <div className="glass rounded-xl p-6 hover:glass-hover transition-all duration-300">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                  {item.icon}
+                </div>
+                <div className="w-8 h-8 mx-auto mb-4 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold">
+                  {item.step}
+                </div>
+                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                <p className="text-muted-foreground">{item.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Value Add Section */}
+      <section className="container px-4 py-20 bg-background">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Katma Değer</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Müşteri deneyimini artıran özellikler
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {[
+            {
+              title: "CX Otomasyonu",
+              description: "Tek bir AI asistan tüm müşteri sorularına yanıt verir",
+              icon: <MessageSquare className="w-8 h-8" />
+            },
+            {
+              title: "Gelir Artışı", 
+              description: "Abandoned cart ve winback akışlarıyla LTV yükselir",
+              icon: <BarChart3 className="w-8 h-8" />
+            },
+            {
+              title: "Omni-channel Uyum",
+              description: "WhatsApp ve Instagram birlikte çalışır",
+              icon: <Zap className="w-8 h-8" />
+            },
+            {
+              title: "Tam Entegrasyon",
+              description: "Shopify, İkas ve CRM verileriyle senkron",
+              icon: <ShoppingBag className="w-8 h-8" />
+            }
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              className="glass rounded-xl p-6 hover:glass-hover transition-all duration-300 text-center"
+            >
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                {item.icon}
+              </div>
+              <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+              <p className="text-sm text-muted-foreground">{item.description}</p>
+            </motion.div>
+          ))}
+        </div>
       </section>
 
       {/* Footer */}

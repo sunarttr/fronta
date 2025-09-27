@@ -8,9 +8,9 @@ const Footer = () => {
         <div className="glass glass-hover rounded-xl p-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4">
-              <h3 className="font-medium text-lg">WhatsApp AI</h3>
+              <h3 className="font-medium text-lg">Asisteye</h3>
               <p className="text-sm text-muted-foreground">
-                E-ticaret için yapay zekâ destekli WhatsApp otomasyon platformu.
+                WhatsApp ve Instagram için AI destekli müşteri deneyimi otomasyon platformu.
               </p>
               <div className="flex space-x-4">
                 <Button variant="ghost" size="icon">
@@ -27,28 +27,28 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <a href="#features" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                    Otomasyon Akışları
+                    12 Hazır Flow
                   </a>
                 </li>
                 <li>
-                  <a href="#pricing" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                    Fiyatlandırma
+                  <a href="#features" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    Politika Eğitimi
                   </a>
                 </li>
               </ul>
             </div>
 
             <div className="space-y-4">
-              <h4 className="font-medium">Destek</h4>
+              <h4 className="font-medium">Entegrasyonlar</h4>
               <ul className="space-y-2">
                 <li>
                   <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                    Kurulum Rehberi
+                    Shopify
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                    Dokümantasyon
+                    İkas
                   </a>
                 </li>
               </ul>
@@ -59,7 +59,12 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                    KVKK Aydınlatma Metni
+                    KVKK
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    Gizlilik
                   </a>
                 </li>
                 <li>
@@ -73,7 +78,7 @@ const Footer = () => {
 
           <div className="mt-8 pt-8 border-t border-border">
             <p className="text-sm text-muted-foreground text-center">
-              © {new Date().getFullYear()} WhatsApp AI. Tüm hakları saklıdır. | KVKK uyumlu altyapı
+              © {new Date().getFullYear()} Asisteye. Tüm hakları saklıdır. | KVKK uyumlu altyapı
             </p>
           </div>
         </div>

@@ -41,8 +41,6 @@ const Navigation = () => {
 
   const navItems = [
     { name: "Özellikler", href: "#features", onClick: () => scrollToSection('features') },
-    { name: "Fiyatlar", href: "#pricing", onClick: () => scrollToSection('pricing') },
-    { name: "Referanslar", href: "#testimonials", onClick: () => scrollToSection('testimonials') },
   ];
 
   return (
@@ -57,7 +55,7 @@ const Navigation = () => {
         <nav className="flex items-center justify-between h-full">
           <div className="flex items-center gap-2">
             <Command className="w-5 h-5 text-primary" />
-            <span className="font-bold text-base">WhatsApp AI</span>
+            <span className="font-bold text-base">Asisteye</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -77,13 +75,6 @@ const Navigation = () => {
                 {item.name}
               </a>
             ))}
-            <Button 
-              onClick={() => scrollToSection('cta')}
-              size="sm"
-              className="button-gradient"
-            >
-              Hemen Başla
-            </Button>
           </div>
 
           {/* Mobile Navigation */}
@@ -112,15 +103,6 @@ const Navigation = () => {
                       {item.name}
                     </a>
                   ))}
-                  <Button 
-                    onClick={() => {
-                      setIsMobileMenuOpen(false);
-                      scrollToSection('cta');
-                    }}
-                    className="button-gradient mt-4"
-                  >
-                    Hemen Başla
-                  </Button>
                 </div>
               </SheetContent>
             </Sheet>
