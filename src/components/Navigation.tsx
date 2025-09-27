@@ -41,6 +41,7 @@ const Navigation = () => {
 
   const navItems = [
     { name: "Özellikler", href: "#features", onClick: () => scrollToSection('features') },
+    { name: "Ön Kayıt", href: "https://calendly.com/dayyillc/30min", onClick: () => window.open('https://calendly.com/dayyillc/30min', '_blank') },
   ];
 
   return (
