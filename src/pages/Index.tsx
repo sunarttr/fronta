@@ -37,6 +37,121 @@ const Index = () => {
         </div>
       </motion.section>
 
+      {/* Product Benefits Section */}
+      <section className="container px-4 py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-light mb-6 text-gray-900">
+              Neden Asisteye?
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              E-ticaret işletmeniz için WhatsApp ve Instagram'da müşteri deneyimini otomatikleştiren tek platform
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1, duration: 0.5 }}
+              className="bg-white rounded-2xl p-8 text-center"
+            >
+              <div className="w-16 h-16 mx-auto mb-6 bg-green-100 rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-green-500 rounded-full"></div>
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">
+                %40'a Kadar LTV Artışı
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Sepet hatırlatma, winback ve cross-sell akışlarıyla müşteri yaşam boyu değerini artırın
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="bg-white rounded-2xl p-8 text-center"
+            >
+              <div className="w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-blue-500 rounded-full"></div>
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">
+                7/24 Otomatik Destek
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                AI asistan müşteri sorularına anında yanıt verir, destek ekibinizin yükünü hafifletir
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="bg-white rounded-2xl p-8 text-center"
+            >
+              <div className="w-16 h-16 mx-auto mb-6 bg-purple-100 rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-purple-500 rounded-full"></div>
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">
+                Dakikalar İçinde Kurulum
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Shopify/İkas entegrasyonu ve 12 hazır akışla hemen kullanmaya başlayın
+              </p>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            className="mt-12 bg-white rounded-2xl p-8"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-900">
+                  Omni-Channel Müşteri Deneyimi
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  WhatsApp ve Instagram'ı tek panelden yönetin. Müşterileriniz hangi kanalda olursa olsun, 
+                  tutarlı ve kişiselleştirilmiş deneyim yaşasınlar.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                    <span className="text-gray-600">Tek dashboard'tan her iki kanal</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                    <span className="text-gray-600">Müşteri geçmişini koruyarak senkron yanıtlar</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                    <span className="text-gray-600">Kişiselleştirilmiş mesajlaşma deneyimi</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div className="bg-gray-100 rounded-xl p-8 text-center">
+                  <div className="text-4xl font-light text-gray-900 mb-2">12</div>
+                  <div className="text-lg font-medium text-gray-700 mb-4">Hazır Otomasyon Akışı</div>
+                  <div className="text-sm text-gray-600">
+                    Sepet hatırlatmadan winback'e, review request'ten cross-sell'e kadar 
+                    tüm e-ticaret ihtiyaçlarınız için hazır akışlar
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="container px-4 py-20">
         <div className="max-w-6xl mx-auto">
