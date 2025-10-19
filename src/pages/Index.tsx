@@ -11,163 +11,197 @@ import crmImage from "@/assets/crm-dashboard.jpg";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-secondary/20 to-background text-card-foreground font-poppins overflow-hidden">
+    <div className="min-h-screen bg-background text-foreground font-sans overflow-hidden relative">
       <Navigation />
       
-      {/* Enhanced Floating Blobs */}
+      {/* Futuristic Mesh Background */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ background: 'var(--gradient-mesh)' }} />
+      
+      {/* Animated Blobs */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-20 -left-20 w-96 h-96 bg-accent/20 blob blur-3xl" />
-        <div className="absolute bottom-10 -right-20 w-[500px] h-[500px] bg-primary/15 blob blur-3xl" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/3 left-1/3 w-80 h-80 bg-accent/15 blob blur-3xl" style={{ animationDelay: '4s' }} />
-        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-primary/10 blob blur-3xl" style={{ animationDelay: '6s' }} />
+        <div className="absolute top-10 left-10 w-[600px] h-[600px] bg-primary/30 blob blur-[120px]" />
+        <div className="absolute bottom-20 right-10 w-[700px] h-[700px] bg-accent/25 blob blur-[140px]" style={{ animationDelay: '3s' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-highlight/20 blob blur-[100px]" style={{ animationDelay: '6s' }} />
       </div>
       
-      {/* Hero Section */}
+      {/* Hero Section - Futuristic */}
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 1 }}
         className="relative"
       >
-        <div className="container relative px-4 pt-32 pb-16 md:pt-44 md:pb-24 z-10">
-          <div className="max-w-6xl mx-auto text-center">
+        <div className="container relative px-4 pt-32 pb-20 md:pt-48 md:pb-32 z-10">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-20">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+                className="inline-flex items-center gap-2 mb-8 px-6 py-3 glass rounded-full neon-border cursor-default"
+              >
+                <Sparkles className="h-5 w-5 text-accent" />
+                <span className="text-accent font-bold text-sm tracking-wider uppercase">AI-Powered Flow Automation</span>
+              </motion.div>
+              
+              <motion.h1
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.7 }}
+                className="text-6xl md:text-8xl lg:text-9xl font-black mb-8 leading-[0.9] tracking-tighter"
+              >
+                Müşteri
+                <br />
+                <span className="text-gradient shimmer inline-block">Kaybetme</span>
+              </motion.h1>
+              
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.7 }}
+                className="text-2xl md:text-3xl text-muted-foreground mb-16 max-w-4xl mx-auto leading-relaxed font-light"
+              >
+                AI flow kampanyaları ile her müşteri{" "}
+                <span className="text-accent font-semibold">otomatik geri kazanılır</span>.
+                <br className="hidden md:block" />
+                %45 daha az iş, %28 daha fazla gelir.
+              </motion.p>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7, duration: 0.7 }}
+                className="flex flex-col sm:flex-row gap-6 justify-center mb-20"
+              >
+                <Button 
+                  size="lg" 
+                  className="button-gradient text-white px-16 py-10 text-2xl font-black group rounded-2xl relative z-10"
+                  onClick={() => window.open('https://calendly.com/dayyillc/30min', '_blank')}
+                >
+                  <span className="relative z-10">Başla</span>
+                  <ArrowRight className="ml-3 h-7 w-7 group-hover:translate-x-2 transition-transform relative z-10" />
+                </Button>
+                <Button 
+                  size="lg" 
+                  className="glass glass-hover px-16 py-10 text-2xl font-bold rounded-2xl border-2 border-primary/30 text-foreground"
+                  onClick={() => window.open('https://calendly.com/dayyillc/30min', '_blank')}
+                >
+                  Demo İzle
+                </Button>
+              </motion.div>
+            </div>
+
+            {/* Bento Grid Stats */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-block mb-8 px-8 py-3 glass rounded-full hover:scale-105 transition-transform cursor-default"
-            >
-              <span className="text-accent font-bold text-base tracking-wide">✨ Flow Otomasyonu ile Müşteri Değeri +%25</span>
-            </motion.div>
-            
-            <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="text-5xl md:text-7xl lg:text-[5.5rem] font-extrabold mb-8 leading-[1.05] tracking-tighter"
-            >
-              Her müşterini{" "}
-              <span className="text-gradient inline-block hover:scale-105 transition-transform">
-                geri kazanan
-              </span>
-              <br />
-              AI asistan
-            </motion.h1>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed font-light"
-            >
-              Flow kampanyaları ile kayıp müşteri kalmaz. Her temas noktasında otomatik akıllı mesaj, 
-              <span className="text-accent font-semibold"> %45 daha az iş yükü, %28 daha fazla gelir</span>.
-            </motion.p>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-5 justify-center"
-            >
-              <Button 
-                size="lg" 
-                className="button-gradient text-white px-12 py-8 text-xl font-bold group hover:scale-105 transition-all"
-                onClick={() => window.open('https://calendly.com/dayyillc/30min', '_blank')}
-              >
-                Flow'ları Keşfet
-                <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
-              </Button>
-              <Button 
-                size="lg" 
-                className="glass glass-hover px-12 py-8 text-xl font-bold border-2 border-accent/20"
-                onClick={() => window.open('https://calendly.com/dayyillc/30min', '_blank')}
-              >
-                Demo İzle
-              </Button>
-            </motion.div>
-
-            {/* Quick Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="mt-16 grid grid-cols-3 gap-6 max-w-2xl mx-auto"
+              transition={{ delay: 0.9, duration: 0.7 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto"
             >
               {[
-                { value: "12+", label: "Hazır Flow" },
-                { value: "%25", label: "LTV Artışı" },
-                { value: "24/7", label: "Otomatik" }
+                { value: "12+", label: "Hazır Flow Şablonu", icon: Zap },
+                { value: "%25", label: "LTV Artışı", icon: TrendingUp },
+                { value: "24/7", label: "Otomatik Çalışır", icon: Activity }
               ].map((stat, i) => (
-                <div key={i} className="glass rounded-2xl p-5 hover:scale-105 transition-transform cursor-default">
-                  <div className="text-3xl font-bold text-gradient mb-1">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground font-medium">{stat.label}</div>
-                </div>
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 1 + i * 0.1, duration: 0.5 }}
+                  className="glass glass-hover rounded-3xl p-8 text-center group cursor-default card-3d"
+                >
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/20 mb-6 group-hover:scale-110 transition-transform">
+                    <stat.icon className="h-8 w-8 text-primary" />
+                  </div>
+                  <div className="text-5xl font-black text-gradient mb-3">{stat.value}</div>
+                  <div className="text-sm text-muted-foreground font-medium uppercase tracking-wider">{stat.label}</div>
+                </motion.div>
               ))}
             </motion.div>
           </div>
         </div>
       </motion.section>
 
-      {/* Flow Kampanyaları Section - NEW */}
-      <section className="py-24 relative z-10">
+      {/* Flow Kampanyaları - Bento Grid */}
+      <section className="py-32 relative z-10">
         <div className="container px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <div className="inline-block mb-4 px-6 py-2 bg-accent/10 rounded-full">
-              <span className="text-accent font-bold text-sm">🎯 AKILLI KAMPANYA YÖNETİMİ</span>
+            <div className="inline-flex items-center gap-2 mb-6 px-6 py-2 glass rounded-full">
+              <Target className="h-4 w-4 text-accent" />
+              <span className="text-accent font-bold text-xs uppercase tracking-widest">Flow Otomasyonu</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tighter">
-              Flow'lar ile <span className="text-gradient">hiç müşteri kaybetme</span>
+            <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter">
+              Akıllı{" "}
+              <span className="text-gradient">Kampanyalar</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
-              Her müşteri davranışına özel otomatik kampanya. Sepeti terk eden, uzun süredir alışveriş yapmayan, 
-              doğum günü yaklaşan - hepsine doğru zamanda doğru mesaj.
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto font-light leading-relaxed">
+              Her müşteri davranışı için özel flow. Sepet terki, winback, özel günler - 
+              <span className="text-accent font-semibold"> hepsi tamamen otomatik</span>.
             </p>
           </motion.div>
 
+          {/* Bento Grid Layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {[
               {
                 icon: Target,
                 title: "Sepet Kurtarma",
-                desc: "Sepeti terk eden müşteriye otomatik hatırlatma. %35 geri dönüş oranı.",
-                color: "from-red-500 to-orange-500"
+                desc: "Sepeti terk eden müşteriye otomatik hatırlatma ve özel indirim.",
+                metric: "%35",
+                label: "Geri Dönüş",
+                color: "from-red-500 to-orange-500",
+                size: "normal"
               },
               {
                 icon: Repeat,
                 title: "Winback",
-                desc: "Uzun süredir alışveriş yapmayan müşterileri geri kazan. %28 aktivasyon.",
-                color: "from-blue-500 to-cyan-500"
+                desc: "Uzun süredir alışveriş yapmayan müşterileri akıllı kampanyalarla geri kazan.",
+                metric: "%28",
+                label: "Aktivasyon",
+                color: "from-blue-500 to-cyan-500",
+                size: "normal"
               },
               {
                 icon: Gift,
                 title: "Özel Günler",
-                desc: "Doğum günü, yıldönümü kampanyaları otomatik. %42 dönüşüm artışı.",
-                color: "from-purple-500 to-pink-500"
+                desc: "Doğum günü, yıldönümü - hiçbirini kaçırma.",
+                metric: "%42",
+                label: "Dönüşüm",
+                color: "from-purple-500 to-pink-500",
+                size: "normal"
               },
               {
                 icon: TrendingUp,
                 title: "Cross-Sell",
-                desc: "Alınan ürüne uygun öneriler otomatik gider. Sipariş değeri %31 artar.",
-                color: "from-green-500 to-emerald-500"
+                desc: "Alınan ürüne özel akıllı öneriler.",
+                metric: "%31",
+                label: "Sipariş +",
+                color: "from-green-500 to-emerald-500",
+                size: "normal"
               },
               {
                 icon: Heart,
                 title: "Sadakat",
-                desc: "VIP müşterilere özel ilgi ve teklifler. LTV %30 artar.",
-                color: "from-rose-500 to-red-500"
+                desc: "VIP müşterilere özel ilgi ve avantajlar.",
+                metric: "%30",
+                label: "LTV Artışı",
+                color: "from-rose-500 to-red-500",
+                size: "normal"
               },
               {
                 icon: Star,
                 title: "İlk Alışveriş",
-                desc: "Yeni müşteriye hoşgeldin mesajı ve özel indirim. %38 tekrar alışveriş.",
-                color: "from-yellow-500 to-amber-500"
+                desc: "Yeni müşteriye hoşgeldin kampanyası.",
+                metric: "%38",
+                label: "Tekrar",
+                color: "from-yellow-500 to-amber-500",
+                size: "normal"
               }
             ].map((flow, index) => (
               <motion.div
@@ -175,15 +209,30 @@ const Index = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="glass glass-hover rounded-3xl p-8 group cursor-pointer relative overflow-hidden"
+                transition={{ delay: index * 0.08, duration: 0.6 }}
+                className="glass glass-hover rounded-3xl p-10 group cursor-pointer relative overflow-hidden card-3d"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${flow.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${flow.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
-                  <flow.icon className="h-7 w-7 text-white" />
+                {/* Gradient Overlay on Hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${flow.color} opacity-0 group-hover:opacity-5 transition-opacity duration-700 rounded-3xl`} />
+                
+                {/* Icon */}
+                <div className="relative z-10 mb-6">
+                  <div className={`inline-flex w-20 h-20 rounded-2xl bg-gradient-to-br ${flow.color} items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}>
+                    <flow.icon className="h-10 w-10 text-white" />
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-accent transition-colors">{flow.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{flow.desc}</p>
+                
+                {/* Content */}
+                <div className="relative z-10">
+                  <h3 className="text-3xl font-black mb-4 group-hover:text-accent transition-colors">{flow.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-6 text-lg">{flow.desc}</p>
+                  
+                  {/* Metric Badge */}
+                  <div className="inline-flex items-center gap-3 px-5 py-3 bg-secondary/50 rounded-2xl border border-primary/20">
+                    <div className="text-3xl font-black text-gradient">{flow.metric}</div>
+                    <div className="text-sm text-muted-foreground font-medium uppercase tracking-wider">{flow.label}</div>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -193,22 +242,22 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6, duration: 0.6 }}
-            className="text-center mt-12"
+            className="text-center mt-16"
           >
             <Button 
               size="lg" 
-              className="button-gradient text-white px-10 py-7 text-lg font-bold group"
+              className="button-gradient text-white px-14 py-8 text-xl font-black group rounded-2xl"
               onClick={() => window.open('https://calendly.com/dayyillc/30min', '_blank')}
             >
-              Tüm Flow'ları Gör
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <span className="relative z-10">Tüm Flow'ları Keşfet</span>
+              <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform relative z-10" />
             </Button>
           </motion.div>
         </div>
       </section>
 
-      {/* Core Features - Enhanced */}
-      <section className="py-24 relative z-10 bg-secondary/30">
+      {/* Platform Özellikleri - Modern Cards */}
+      <section className="py-32 relative z-10">
         <div className="container px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -217,72 +266,82 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tighter">Platform özellikleri</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-light">
-              Müşteri iletişiminin tüm ihtiyaçları tek yerde
+            <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter">
+              Güçlü <span className="text-gradient">Platform</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-light">
+              Tüm kanallar, tek panel. AI ile otomatik.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {[
               {
                 icon: Phone,
                 image: aiCallImage,
-                title: "AI Çağrı Asistanı",
-                desc: "Gelen ve giden aramaları otomatik yönet. Hiç kaçan müşteri kalmasın.",
+                title: "AI Çağrı",
+                desc: "Gelen ve giden aramaları AI yönetir. 7/24 aktif.",
                 metrics: [
-                  { label: "Yanıt süresi", value: "2sn" },
-                  { label: "Başarı oranı", value: "%94" }
+                  { label: "Yanıt", value: "2sn", icon: Clock },
+                  { label: "Başarı", value: "%94", icon: CheckCircle2 }
                 ]
               },
               {
                 icon: MessageSquare,
                 image: whatsappImage,
-                title: "WhatsApp + Instagram",
-                desc: "İki kanalı tek panelden yönet. Mesajlar otomatik gönderilir ve yanıtlanır.",
+                title: "WhatsApp + IG",
+                desc: "İki kanal tek yerden. Otomatik mesajlaşma.",
                 metrics: [
-                  { label: "Açılma oranı", value: "%98" },
-                  { label: "Yanıt süresi", value: "Anında" }
+                  { label: "Açılma", value: "%98", icon: Activity },
+                  { label: "Yanıt", value: "Anında", icon: Zap }
                 ]
               },
               {
                 icon: Users,
                 image: crmImage,
-                title: "Akıllı CRM & Segmentasyon",
-                desc: "Müşteri davranışlarını analiz et, özel kampanyalar oluştur.",
+                title: "Akıllı CRM",
+                desc: "Davranış analizi ve otomatik segmentasyon.",
                 metrics: [
-                  { label: "Segment sayısı", value: "Sınırsız" },
-                  { label: "Otomasyon", value: "%100" }
+                  { label: "Segment", value: "∞", icon: Target },
+                  { label: "Otomasyon", value: "%100", icon: TrendingUp }
                 ]
               }
             ].map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.15, duration: 0.6 }}
-                className="glass glass-hover rounded-3xl overflow-hidden group cursor-pointer"
+                transition={{ delay: index * 0.15, duration: 0.7 }}
+                className="glass glass-hover rounded-3xl overflow-hidden group cursor-pointer card-3d"
               >
-                <div className="relative h-56 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent/30 via-transparent to-primary/30 mix-blend-overlay z-10" />
+                {/* Image with Gradient Overlay */}
+                <div className="relative h-64 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/50 via-transparent to-accent/50 mix-blend-overlay z-10" />
                   <img 
                     src={item.image} 
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                   />
-                  <div className="absolute bottom-4 left-4 z-20 p-3 bg-white/95 backdrop-blur-xl rounded-2xl shadow-lg group-hover:scale-110 transition-transform">
-                    <item.icon className="h-7 w-7 text-accent" />
+                  <div className="absolute top-6 left-6 z-20 p-4 glass rounded-2xl group-hover:scale-110 transition-transform neon-border">
+                    <item.icon className="h-8 w-8 text-primary" />
                   </div>
                 </div>
+                
+                {/* Content */}
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold mb-3 group-hover:text-accent transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed mb-6">{item.desc}</p>
+                  <h3 className="text-3xl font-black mb-4 group-hover:text-accent transition-colors">{item.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-8 text-lg">{item.desc}</p>
+                  
+                  {/* Metrics */}
                   <div className="flex gap-4">
                     {item.metrics.map((metric, i) => (
-                      <div key={i} className="bg-secondary/50 rounded-xl px-4 py-2">
-                        <div className="text-xs text-muted-foreground mb-1">{metric.label}</div>
-                        <div className="text-sm font-bold text-accent">{metric.value}</div>
+                      <div key={i} className="flex-1 glass rounded-2xl px-4 py-4 border border-primary/10 group-hover:border-primary/30 transition-colors">
+                        <div className="flex items-center gap-2 mb-2">
+                          <metric.icon className="h-4 w-4 text-accent" />
+                          <div className="text-xs text-muted-foreground uppercase tracking-wider">{metric.label}</div>
+                        </div>
+                        <div className="text-2xl font-black text-gradient">{metric.value}</div>
                       </div>
                     ))}
                   </div>
@@ -293,8 +352,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Industry Solutions - Enhanced */}
-      <section className="py-24 relative">
+      {/* Sektörel Çözümler - Ultra Modern */}
+      <section className="py-32 relative">
         <div className="container px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -303,126 +362,132 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tighter">Sektörüne özel çözümler</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-light">
-              Her sektörün ihtiyacına göre optimize edilmiş flow kampanyaları
+            <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter">
+              Sektörüne <span className="text-gradient">Özel</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-light">
+              Her sektöre optimize flow kampanyaları
             </p>
           </motion.div>
 
           <div className="space-y-8 max-w-7xl mx-auto">
-            {/* Hotels */}
+            {/* Hotels - Horizontal Card */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.8 }}
               className="glass glass-hover rounded-3xl overflow-hidden group"
             >
-              <div className="grid md:grid-cols-5 gap-0">
-                <div className="md:col-span-2 relative h-72 md:h-auto overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent/50 to-transparent z-10" />
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="relative h-96 md:h-auto overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/60 via-transparent to-accent/40 mix-blend-overlay z-10" />
                   <img 
                     src={hotelImage} 
                     alt="Oteller"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                   />
-                  <div className="absolute top-6 left-6 z-20 flex items-center gap-3 px-6 py-3 bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl">
-                    <Hotel className="h-7 w-7 text-accent" />
-                    <span className="font-bold text-xl">Oteller</span>
+                  <div className="absolute top-8 left-8 z-20 glass px-8 py-4 rounded-2xl neon-border">
+                    <div className="flex items-center gap-4">
+                      <Hotel className="h-10 w-10 text-primary" />
+                      <span className="font-black text-3xl">Oteller</span>
+                    </div>
                   </div>
                 </div>
-                <div className="md:col-span-3 p-10 md:p-14">
-                  <h3 className="text-3xl md:text-4xl font-extrabold mb-6 leading-tight">
-                    Misafir deneyimini <span className="text-gradient">%25 geliştir</span>
+                <div className="p-12 md:p-16">
+                  <h3 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
+                    Doluluk oranı <span className="text-gradient">%25 artar</span>
                   </h3>
-                  <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                    Rezervasyon flow'ları ile kayıp rezervasyon kalmaz. Check-in hatırlatmaları, 
-                    promosyon kampanyaları ve misafir geri kazanma tamamen otomatik.
+                  <p className="text-muted-foreground text-xl mb-10 leading-relaxed">
+                    Rezervasyon flow'ları, check-in hatırlatmaları ve misafir geri kazanma 
+                    tamamen AI tarafından yönetilir.
                   </p>
-                  <div className="grid grid-cols-2 gap-4 mb-8">
+                  <div className="grid grid-cols-2 gap-4 mb-10">
                     {[
-                      { icon: Activity, text: "Rezervasyon flow", badge: "Otomatik" },
-                      { icon: Clock, text: "7/24 destek", badge: "AI" },
-                      { icon: TrendingUp, text: "Doluluk +%32", badge: "Kanıtlanmış" },
-                      { icon: CheckCircle2, text: "Geri kazanma", badge: "%28 başarı" }
+                      { icon: Activity, text: "Rezervasyon Flow", badge: "Otomatik", color: "primary" },
+                      { icon: Clock, text: "7/24 AI Destek", badge: "Aktif", color: "accent" },
+                      { icon: TrendingUp, text: "Doluluk +%32", badge: "Kanıtlanmış", color: "highlight" },
+                      { icon: CheckCircle2, text: "Geri Kazanma", badge: "%28", color: "primary" }
                     ].map((item, i) => (
-                      <div key={i} className="flex items-start gap-3 p-4 bg-secondary/50 rounded-2xl hover:bg-secondary/70 transition-colors">
-                        <div className="p-2 bg-accent/10 rounded-xl">
-                          <item.icon className="h-5 w-5 text-accent" />
+                      <div key={i} className="glass rounded-2xl p-5 hover:scale-105 transition-all cursor-pointer border border-primary/10 hover:border-primary/30">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="p-2 bg-primary/20 rounded-xl">
+                            <item.icon className="h-5 w-5 text-primary" />
+                          </div>
+                          <span className="font-bold text-lg">{item.text}</span>
                         </div>
-                        <div className="flex-1">
-                          <span className="font-semibold block mb-1">{item.text}</span>
-                          <span className="text-xs text-accent font-medium">{item.badge}</span>
-                        </div>
+                        <span className="inline-block text-xs text-accent font-bold uppercase tracking-wider px-3 py-1 bg-accent/10 rounded-full">{item.badge}</span>
                       </div>
                     ))}
                   </div>
                   <Button 
-                    className="button-gradient text-white font-bold group"
+                    className="button-gradient text-white font-black group rounded-2xl"
                     size="lg"
                     onClick={() => window.open('https://calendly.com/dayyillc/30min', '_blank')}
                   >
-                    Otel Flow'larını İncele
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    <span className="relative z-10">Otel Flow'larını İncele</span>
+                    <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform relative z-10" />
                   </Button>
                 </div>
               </div>
             </motion.div>
 
-            {/* E-commerce */}
+            {/* E-commerce - Reversed */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.8 }}
               className="glass glass-hover rounded-3xl overflow-hidden group"
             >
-              <div className="grid md:grid-cols-5 gap-0">
-                <div className="md:col-span-3 p-10 md:p-14 order-2 md:order-1">
-                  <h3 className="text-3xl md:text-4xl font-extrabold mb-6 leading-tight">
-                    Müşteri değerini <span className="text-gradient">%28 artır</span>
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="p-12 md:p-16 order-2 md:order-1">
+                  <h3 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
+                    Müşteri değeri <span className="text-gradient">%28 artar</span>
                   </h3>
-                  <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                    Sepet kurtarma, winback, cross-sell flow'ları ile kayıp müşteri kalmaz. 
-                    Her müşteri davranışına özel otomatik kampanya, sürekli artan gelir.
+                  <p className="text-muted-foreground text-xl mb-10 leading-relaxed">
+                    Sepet kurtarma, winback, cross-sell - her flow otomatik çalışır, 
+                    sürekli artan gelir sağlar.
                   </p>
-                  <div className="grid grid-cols-2 gap-4 mb-8">
+                  <div className="grid grid-cols-2 gap-4 mb-10">
                     {[
-                      { icon: Target, text: "Sepet kurtarma", badge: "%35 dönüş" },
-                      { icon: Repeat, text: "Winback flow", badge: "%28 aktif" },
-                      { icon: TrendingUp, text: "LTV artışı", badge: "%30" },
-                      { icon: Gift, text: "Cross-sell", badge: "+%31 sipariş" }
+                      { icon: Target, text: "Sepet Kurtarma", badge: "%35", color: "primary" },
+                      { icon: Repeat, text: "Winback Flow", badge: "%28", color: "accent" },
+                      { icon: TrendingUp, text: "LTV Artışı", badge: "%30", color: "highlight" },
+                      { icon: Gift, text: "Cross-Sell", badge: "+%31", color: "primary" }
                     ].map((item, i) => (
-                      <div key={i} className="flex items-start gap-3 p-4 bg-secondary/50 rounded-2xl hover:bg-secondary/70 transition-colors">
-                        <div className="p-2 bg-accent/10 rounded-xl">
-                          <item.icon className="h-5 w-5 text-accent" />
+                      <div key={i} className="glass rounded-2xl p-5 hover:scale-105 transition-all cursor-pointer border border-primary/10 hover:border-primary/30">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="p-2 bg-accent/20 rounded-xl">
+                            <item.icon className="h-5 w-5 text-accent" />
+                          </div>
+                          <span className="font-bold text-lg">{item.text}</span>
                         </div>
-                        <div className="flex-1">
-                          <span className="font-semibold block mb-1">{item.text}</span>
-                          <span className="text-xs text-accent font-medium">{item.badge}</span>
-                        </div>
+                        <span className="inline-block text-xs text-accent font-bold uppercase tracking-wider px-3 py-1 bg-accent/10 rounded-full">{item.badge}</span>
                       </div>
                     ))}
                   </div>
                   <Button 
-                    className="button-gradient text-white font-bold group"
+                    className="button-gradient text-white font-black group rounded-2xl"
                     size="lg"
                     onClick={() => window.open('https://calendly.com/dayyillc/30min', '_blank')}
                   >
-                    E-Ticaret Flow'larını İncele
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    <span className="relative z-10">E-Ticaret Flow'ları</span>
+                    <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform relative z-10" />
                   </Button>
                 </div>
-                <div className="md:col-span-2 relative h-72 md:h-auto overflow-hidden order-1 md:order-2">
-                  <div className="absolute inset-0 bg-gradient-to-bl from-accent/50 to-transparent z-10" />
+                <div className="relative h-96 md:h-auto overflow-hidden order-1 md:order-2">
+                  <div className="absolute inset-0 bg-gradient-to-bl from-accent/60 via-transparent to-primary/40 mix-blend-overlay z-10" />
                   <img 
                     src={ecommerceImage} 
                     alt="E-ticaret"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                   />
-                  <div className="absolute top-6 right-6 z-20 flex items-center gap-3 px-6 py-3 bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl">
-                    <ShoppingBag className="h-7 w-7 text-accent" />
-                    <span className="font-bold text-xl">E-Ticaret</span>
+                  <div className="absolute top-8 right-8 z-20 glass px-8 py-4 rounded-2xl neon-border">
+                    <div className="flex items-center gap-4">
+                      <ShoppingBag className="h-10 w-10 text-accent" />
+                      <span className="font-black text-3xl">E-Ticaret</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -430,58 +495,60 @@ const Index = () => {
 
             {/* Beauty Salons */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.8 }}
               className="glass glass-hover rounded-3xl overflow-hidden group"
             >
-              <div className="grid md:grid-cols-5 gap-0">
-                <div className="md:col-span-2 relative h-72 md:h-auto overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent/50 to-transparent z-10" />
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="relative h-96 md:h-auto overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-highlight/60 via-transparent to-primary/40 mix-blend-overlay z-10" />
                   <img 
                     src={beautySalonImage} 
                     alt="Güzellik Salonları"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                   />
-                  <div className="absolute top-6 left-6 z-20 flex items-center gap-3 px-6 py-3 bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl">
-                    <Sparkles className="h-7 w-7 text-accent" />
-                    <span className="font-bold text-xl">Güzellik</span>
+                  <div className="absolute top-8 left-8 z-20 glass px-8 py-4 rounded-2xl neon-border">
+                    <div className="flex items-center gap-4">
+                      <Sparkles className="h-10 w-10 text-highlight" />
+                      <span className="font-black text-3xl">Güzellik</span>
+                    </div>
                   </div>
                 </div>
-                <div className="md:col-span-3 p-10 md:p-14">
-                  <h3 className="text-3xl md:text-4xl font-extrabold mb-6 leading-tight">
-                    Randevu doluluk <span className="text-gradient">%38 artar</span>
+                <div className="p-12 md:p-16">
+                  <h3 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
+                    Doluluk <span className="text-gradient">%38 artar</span>
                   </h3>
-                  <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                    Randevu flow'ları ile hiç boş slot kalmaz. Hatırlatmalar, müşteri dönüş kampanyaları 
-                    ve özel gün mesajları tamamen otomatik. Manuel iş sıfır.
+                  <p className="text-muted-foreground text-xl mb-10 leading-relaxed">
+                    Randevu flow'ları ile boş slot kalmaz. Hatırlatmalar ve dönüş kampanyaları 
+                    tamamen otomatik.
                   </p>
-                  <div className="grid grid-cols-2 gap-4 mb-8">
+                  <div className="grid grid-cols-2 gap-4 mb-10">
                     {[
-                      { icon: Activity, text: "Otomatik randevu", badge: "AI yapıyor" },
-                      { icon: Clock, text: "Hatırlatma flow", badge: "%92 gelme" },
-                      { icon: TrendingUp, text: "Doluluk +%38", badge: "Daha fazla" },
-                      { icon: Heart, text: "Müşteri dönüşü", badge: "%42 tekrar" }
+                      { icon: Activity, text: "Otomatik Randevu", badge: "AI", color: "primary" },
+                      { icon: Clock, text: "Hatırlatma Flow", badge: "%92", color: "accent" },
+                      { icon: TrendingUp, text: "Doluluk +%38", badge: "Artış", color: "highlight" },
+                      { icon: Heart, text: "Dönüş Oranı", badge: "%42", color: "primary" }
                     ].map((item, i) => (
-                      <div key={i} className="flex items-start gap-3 p-4 bg-secondary/50 rounded-2xl hover:bg-secondary/70 transition-colors">
-                        <div className="p-2 bg-accent/10 rounded-xl">
-                          <item.icon className="h-5 w-5 text-accent" />
+                      <div key={i} className="glass rounded-2xl p-5 hover:scale-105 transition-all cursor-pointer border border-primary/10 hover:border-primary/30">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="p-2 bg-highlight/20 rounded-xl">
+                            <item.icon className="h-5 w-5 text-highlight" />
+                          </div>
+                          <span className="font-bold text-lg">{item.text}</span>
                         </div>
-                        <div className="flex-1">
-                          <span className="font-semibold block mb-1">{item.text}</span>
-                          <span className="text-xs text-accent font-medium">{item.badge}</span>
-                        </div>
+                        <span className="inline-block text-xs text-accent font-bold uppercase tracking-wider px-3 py-1 bg-accent/10 rounded-full">{item.badge}</span>
                       </div>
                     ))}
                   </div>
                   <Button 
-                    className="button-gradient text-white font-bold group"
+                    className="button-gradient text-white font-black group rounded-2xl"
                     size="lg"
                     onClick={() => window.open('https://calendly.com/dayyillc/30min', '_blank')}
                   >
-                    Güzellik Flow'larını İncele
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    <span className="relative z-10">Güzellik Flow'ları</span>
+                    <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform relative z-10" />
                   </Button>
                 </div>
               </div>
@@ -490,61 +557,61 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Social Proof - Enhanced */}
-      <section className="py-24 relative bg-secondary/30">
+      {/* Social Proof - Modern Stats */}
+      <section className="py-32 relative">
         <div className="container px-4">
-          <div className="max-w-6xl mx-auto glass rounded-3xl p-12 md:p-20 relative overflow-hidden">
+          <div className="max-w-6xl mx-auto glass rounded-3xl p-16 md:p-24 relative overflow-hidden neon-border">
             <div className="absolute inset-0 animated-gradient opacity-5" />
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-center mb-16 relative z-10"
+              className="text-center mb-20 relative z-10"
             >
-              <h2 className="text-3xl md:text-5xl font-extrabold mb-6">100+ işletme flow'larla büyüyor</h2>
-              <p className="text-xl text-muted-foreground font-light">
-                Kayıp müşteri yok, sürekli artan gelir
+              <h2 className="text-4xl md:text-6xl font-black mb-6">100+ İşletme Flow'larla Büyüyor</h2>
+              <p className="text-2xl text-muted-foreground font-light">
+                Kayıp müşteri yok, sürekli artan gelir var
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10">
               {[
                 {
                   metric: "%45",
-                  label: "Daha Az İş Yükü",
-                  desc: "Flow'lar otomatik çalışır",
+                  label: "Daha Az İş",
+                  desc: "Flow'lar otomatik",
                   icon: Zap
                 },
                 {
                   metric: "%28",
-                  label: "Müşteri Değeri Artışı",
-                  desc: "Her flow müşteriyi geri kazanır",
+                  label: "Değer Artışı",
+                  desc: "Müşteri geri kazanma",
                   icon: TrendingUp
                 },
                 {
                   metric: "0",
                   label: "Kayıp Müşteri",
-                  desc: "Akıllı flow'larla hepsi aktif",
+                  desc: "AI ile hepsi aktif",
                   icon: Target
                 }
               ].map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  transition={{ delay: index * 0.15, duration: 0.6 }}
                   className="text-center group cursor-default"
                 >
-                  <div className="inline-block p-4 bg-accent/10 rounded-2xl mb-4 group-hover:scale-110 transition-transform">
-                    <item.icon className="h-10 w-10 text-accent" />
+                  <div className="inline-flex p-6 glass rounded-2xl mb-6 group-hover:scale-110 transition-transform neon-border">
+                    <item.icon className="h-14 w-14 text-primary" />
                   </div>
-                  <div className="text-6xl md:text-7xl font-extrabold text-gradient mb-4 group-hover:scale-105 transition-transform">
+                  <div className="text-7xl md:text-8xl font-black text-gradient mb-6 group-hover:scale-105 transition-transform">
                     {item.metric}
                   </div>
-                  <h3 className="text-xl font-bold mb-2">{item.label}</h3>
-                  <p className="text-muted-foreground">{item.desc}</p>
+                  <h3 className="text-2xl font-black mb-3">{item.label}</h3>
+                  <p className="text-muted-foreground text-lg">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -552,36 +619,50 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Final CTA - Enhanced */}
-      <section className="py-32 relative">
+      {/* Final CTA - Ultra Futuristic */}
+      <section className="py-40 relative">
         <div className="container relative px-4">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="max-w-5xl mx-auto text-center glass rounded-3xl p-14 md:p-20 glow relative overflow-hidden"
+            transition={{ duration: 0.8 }}
+            className="max-w-6xl mx-auto text-center glass rounded-3xl p-16 md:p-28 glow relative overflow-hidden neon-border"
           >
             <div className="absolute inset-0 animated-gradient opacity-5" />
             <div className="relative z-10">
-              <h2 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tighter">
-                Kayıp müşteri dönemi <span className="text-gradient">sona erdi</span>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+                className="inline-flex items-center gap-2 mb-8 px-6 py-3 glass rounded-full neon-border"
+              >
+                <Sparkles className="h-5 w-5 text-accent" />
+                <span className="text-accent font-bold text-sm uppercase tracking-widest">Geleceğe Hazır Ol</span>
+              </motion.div>
+              
+              <h2 className="text-5xl md:text-7xl font-black mb-8 leading-tight tracking-tighter">
+                Kayıp Müşteri Dönemi{" "}
+                <span className="text-gradient shimmer">Bitti</span>
               </h2>
-              <p className="text-xl md:text-2xl text-muted-foreground mb-12 font-light max-w-3xl mx-auto">
-                Flow kampanyaları ile her müşteri geri kazanılır. Kurulum 5 dakika, ilk sonuçları aynı gün gör.
+              <p className="text-2xl md:text-3xl text-muted-foreground mb-16 font-light max-w-4xl mx-auto leading-relaxed">
+                AI flow kampanyaları ile her müşteri otomatik geri kazanılır.
+                <br className="hidden md:block" />
+                <span className="text-accent font-semibold">Kurulum 5 dakika, sonuç aynı gün</span>.
               </p>
-              <div className="flex flex-col sm:flex-row gap-5 justify-center">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <Button 
                   size="lg" 
-                  className="button-gradient text-white px-14 py-8 text-xl font-extrabold group hover:scale-105 transition-all shadow-2xl"
+                  className="button-gradient text-white px-20 py-10 text-2xl font-black group rounded-2xl hover:scale-105 transition-all shadow-2xl"
                   onClick={() => window.open('https://calendly.com/dayyillc/30min', '_blank')}
                 >
-                  Flow'ları Keşfet
-                  <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
+                  <span className="relative z-10">Başla</span>
+                  <ArrowRight className="ml-3 h-8 w-8 group-hover:translate-x-2 transition-transform relative z-10" />
                 </Button>
                 <Button 
                   size="lg" 
-                  className="glass glass-hover px-14 py-8 text-xl font-bold border-2 border-accent/30 hover:scale-105 transition-all"
+                  className="glass glass-hover px-20 py-10 text-2xl font-bold rounded-2xl border-2 border-primary/30 text-foreground hover:scale-105 transition-all"
                   onClick={() => window.open('https://calendly.com/dayyillc/30min', '_blank')}
                 >
                   Demo İzle
