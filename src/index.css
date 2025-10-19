@@ -52,11 +52,11 @@
 }
 
 .glass {
-  @apply bg-white/60 backdrop-blur-lg border-gray-200/50;
+  @apply bg-white/60 backdrop-blur-2xl border-white/20;
   border: 1px solid transparent;
   background-clip: padding-box;
   position: relative;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  box-shadow: 0 20px 40px -12px rgb(0 0 0 / 0.1);
 }
 
 .glass::before {
@@ -65,7 +65,7 @@
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(225deg, rgba(0,0,0,0.1), rgba(0,0,0,0.02));
+  background: linear-gradient(135deg, rgba(66, 153, 225, 0.3), rgba(66, 153, 225, 0.05));
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
@@ -74,13 +74,40 @@
 }
 
 .glass-hover {
-  @apply transition-all duration-300 hover:bg-white/80;
+  @apply transition-all duration-500 hover:bg-white/70 hover:shadow-2xl hover:-translate-y-1;
 }
 
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-[#22c55e];
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-accent via-accent/80 to-accent/60;
 }
 
 .button-gradient {
-  @apply bg-gradient-to-r from-primary to-[#22c55e] hover:opacity-90 transition-opacity rounded-full;
+  @apply bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-all duration-300 rounded-2xl shadow-lg hover:shadow-2xl;
+}
+
+.glow {
+  box-shadow: 0 0 40px rgba(66, 153, 225, 0.3);
+}
+
+.animated-gradient {
+  background: linear-gradient(135deg, hsl(210 100% 8%), hsl(217 91% 60%), hsl(195 100% 65%));
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.blob {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: blob 7s ease-in-out infinite;
+}
+
+@keyframes blob {
+  0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+  25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }
+  50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
+  75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }
 }
