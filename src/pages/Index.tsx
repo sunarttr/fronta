@@ -37,7 +37,7 @@ const Index = () => {
               transition={{ delay: 0.2, duration: 0.5 }}
               className="inline-block mb-8 px-8 py-3 glass rounded-full hover:scale-105 transition-transform cursor-default"
             >
-              <span className="text-accent font-bold text-base tracking-wide">✨ Flow Otomasyonu ile Müşteri Değeri +%40</span>
+              <span className="text-accent font-bold text-base tracking-wide">✨ Flow Otomasyonu ile Müşteri Değeri +%25</span>
             </motion.div>
             
             <motion.h1
@@ -61,7 +61,7 @@ const Index = () => {
               className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed font-light"
             >
               Flow kampanyaları ile kayıp müşteri kalmaz. Her temas noktasında otomatik akıllı mesaj, 
-              <span className="text-accent font-semibold"> %70 daha az iş yükü, %40 daha fazla gelir</span>.
+              <span className="text-accent font-semibold"> %45 daha az iş yükü, %28 daha fazla gelir</span>.
             </motion.p>
             
             <motion.div
@@ -96,7 +96,7 @@ const Index = () => {
             >
               {[
                 { value: "12+", label: "Hazır Flow" },
-                { value: "%40", label: "LTV Artışı" },
+                { value: "%25", label: "LTV Artışı" },
                 { value: "24/7", label: "Otomatik" }
               ].map((stat, i) => (
                 <div key={i} className="glass rounded-2xl p-5 hover:scale-105 transition-transform cursor-default">
@@ -160,7 +160,7 @@ const Index = () => {
               {
                 icon: Heart,
                 title: "Sadakat",
-                desc: "VIP müşterilere özel ilgi ve teklifler. LTV %45 artar.",
+                desc: "VIP müşterilere özel ilgi ve teklifler. LTV %30 artar.",
                 color: "from-rose-500 to-red-500"
               },
               {
@@ -333,7 +333,7 @@ const Index = () => {
                 </div>
                 <div className="md:col-span-3 p-10 md:p-14">
                   <h3 className="text-3xl md:text-4xl font-extrabold mb-6 leading-tight">
-                    Misafir deneyimini <span className="text-gradient">%40 geliştir</span>
+                    Misafir deneyimini <span className="text-gradient">%25 geliştir</span>
                   </h3>
                   <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
                     Rezervasyon flow'ları ile kayıp rezervasyon kalmaz. Check-in hatırlatmaları, 
@@ -380,7 +380,7 @@ const Index = () => {
               <div className="grid md:grid-cols-5 gap-0">
                 <div className="md:col-span-3 p-10 md:p-14 order-2 md:order-1">
                   <h3 className="text-3xl md:text-4xl font-extrabold mb-6 leading-tight">
-                    Müşteri değerini <span className="text-gradient">%45 artır</span>
+                    Müşteri değerini <span className="text-gradient">%28 artır</span>
                   </h3>
                   <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
                     Sepet kurtarma, winback, cross-sell flow'ları ile kayıp müşteri kalmaz. 
@@ -390,7 +390,7 @@ const Index = () => {
                     {[
                       { icon: Target, text: "Sepet kurtarma", badge: "%35 dönüş" },
                       { icon: Repeat, text: "Winback flow", badge: "%28 aktif" },
-                      { icon: TrendingUp, text: "LTV artışı", badge: "%45" },
+                      { icon: TrendingUp, text: "LTV artışı", badge: "%30" },
                       { icon: Gift, text: "Cross-sell", badge: "+%31 sipariş" }
                     ].map((item, i) => (
                       <div key={i} className="flex items-start gap-3 p-4 bg-secondary/50 rounded-2xl hover:bg-secondary/70 transition-colors">
@@ -511,13 +511,13 @@ const Index = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
               {[
                 {
-                  metric: "%70",
+                  metric: "%45",
                   label: "Daha Az İş Yükü",
                   desc: "Flow'lar otomatik çalışır",
                   icon: Zap
                 },
                 {
-                  metric: "%45",
+                  metric: "%28",
                   label: "Müşteri Değeri Artışı",
                   desc: "Her flow müşteriyi geri kazanır",
                   icon: TrendingUp
