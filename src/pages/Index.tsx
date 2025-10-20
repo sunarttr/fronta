@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { Sparkles, Zap, TrendingUp, Gift, Heart, Star, ShoppingCart, Calendar, Check, Play, Rocket, ArrowRight, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ecommerceImg from "@/assets/ecommerce-workspace.jpg";
@@ -73,76 +74,90 @@ const Index = () => {
       </section>
 
       {/* Flow Types - Clean Grid */}
-      <section className="section-padding bg-secondary/30">
+      <section id="features" className="section-padding bg-gradient-to-b from-secondary/30 to-background">
         <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-5xl font-bold">
-              Her Senaryoya Özel <span className="text-primary">Flow Kampanyaları</span>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-20 space-y-6"
+          >
+            <h2 className="text-5xl md:text-6xl font-bold leading-tight">
+              Her Senaryoya Özel <br />
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Flow Kampanyaları
+              </span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               AI destekli otomatik kampanyalar, her müşteri davranışına anında yanıt verir
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 icon: ShoppingCart,
                 title: "Sepet Kurtarma",
                 description: "Sepeti terk eden müşterilere otomatik hatırlatma ve özel indirim gönderin",
                 metric: "%30 kurtarma",
-                gradient: "from-purple-500/10 to-blue-500/10"
+                gradient: "from-purple-500/10 to-blue-500/10",
+                iconColor: "from-purple-500 to-blue-500"
               },
               {
                 icon: Heart,
                 title: "Winback Flow",
                 description: "60+ gün inaktif müşterileri geri kazanma kampanyası",
                 metric: "%22 geri dönüş",
-                gradient: "from-pink-500/10 to-rose-500/10"
+                gradient: "from-pink-500/10 to-rose-500/10",
+                iconColor: "from-pink-500 to-rose-500"
               },
               {
                 icon: Gift,
                 title: "İlk Alışveriş",
                 description: "Yeni müşterilere özel karşılama ve teşvik mesajları",
                 metric: "%35 ikinci sipariş",
-                gradient: "from-orange-500/10 to-amber-500/10"
+                gradient: "from-orange-500/10 to-amber-500/10",
+                iconColor: "from-orange-500 to-amber-500"
               },
               {
                 icon: Star,
                 title: "Sadakat Flow",
                 description: "Sadık müşterilere özel ödüller ve VIP avantajlar sunun",
                 metric: "%40 LTV artışı",
-                gradient: "from-yellow-500/10 to-orange-500/10"
+                gradient: "from-yellow-500/10 to-orange-500/10",
+                iconColor: "from-yellow-500 to-orange-500"
               },
               {
                 icon: Calendar,
                 title: "Doğum Günü",
                 description: "Müşterilere özel gün kutlaması ve hediye kampanyaları",
                 metric: "%45 açılma",
-                gradient: "from-blue-500/10 to-cyan-500/10"
+                gradient: "from-blue-500/10 to-cyan-500/10",
+                iconColor: "from-blue-500 to-cyan-500"
               },
               {
                 icon: TrendingUp,
                 title: "Yeniden Satın Alma",
                 description: "Ürün tükenme tahmini ile otomatik hatırlatma sistemi",
                 metric: "%28 tekrar satış",
-                gradient: "from-green-500/10 to-emerald-500/10"
+                gradient: "from-green-500/10 to-emerald-500/10",
+                iconColor: "from-green-500 to-emerald-500"
               },
             ].map((flow, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="feature-card"
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="group feature-card cursor-pointer"
               >
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${flow.gradient} flex items-center justify-center mb-6`}>
-                  <flow.icon className="w-7 h-7 text-primary" />
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${flow.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300 shadow-lg`}>
+                  <flow.icon className={`w-8 h-8 bg-gradient-to-r ${flow.iconColor} bg-clip-text text-transparent`} />
                 </div>
-                <h3 className="text-2xl font-bold mb-3">{flow.title}</h3>
-                <p className="text-muted-foreground mb-4 leading-relaxed">{flow.description}</p>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{flow.title}</h3>
+                <p className="text-muted-foreground mb-6 leading-relaxed">{flow.description}</p>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 text-primary text-sm font-semibold group-hover:scale-105 transition-transform">
                   <TrendingUp className="w-4 h-4" />
                   {flow.metric}
                 </div>
@@ -155,22 +170,37 @@ const Index = () => {
       {/* Platform Features - Image Showcase */}
       <section className="section-padding">
         <div className="container mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
               className="space-y-8"
             >
-              <h2 className="text-5xl font-bold">
-                <span className="text-primary">WhatsApp Business</span>
-                <br />
-                Resmi API Entegrasyonu
-              </h2>
+              <div className="space-y-4">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20"
+                >
+                  <MessageSquare className="w-4 h-4 text-green-600" />
+                  <span className="text-sm font-semibold text-green-600">WhatsApp Business API</span>
+                </motion.div>
+                
+                <h2 className="text-5xl md:text-6xl font-bold leading-tight">
+                  <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                    WhatsApp ile
+                  </span>
+                  <br />
+                  Müşterilerinize Ulaşın
+                </h2>
+              </div>
               
               <p className="text-xl text-muted-foreground leading-relaxed">
                 Müşterilerinize en sevdikleri kanaldan ulaşın. WhatsApp Business API 
-                ile güvenli, hızlı ve etkili iletişim.
+                ile güvenli, hızlı ve <span className="text-foreground font-medium">etkili iletişim</span>.
               </p>
 
               <ul className="space-y-4">
@@ -180,29 +210,38 @@ const Index = () => {
                   "Multimedya mesaj gönderimi (görsel, video, dosya)",
                   "Anlık teslimat ve okundu bilgisi",
                 ].map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
-                      <Check className="w-4 h-4 text-primary" />
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="flex items-start gap-3 group"
+                  >
+                    <div className="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-green-500/20 transition-colors">
+                      <Check className="w-4 h-4 text-green-600" />
                     </div>
-                    <span className="text-lg">{feature}</span>
-                  </li>
+                    <span className="text-lg text-muted-foreground group-hover:text-foreground transition-colors">{feature}</span>
+                  </motion.li>
                 ))}
               </ul>
 
-              <Button size="lg" className="text-lg px-8 h-14 rounded-2xl group">
+              <Button size="lg" className="text-lg px-8 h-14 rounded-2xl group shadow-lg hover:shadow-xl transition-all duration-300">
                 Daha Fazla Bilgi
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: 30, rotate: 2 }}
+              whileInView={{ opacity: 1, x: 0, rotate: 0 }}
               viewport={{ once: true }}
-              className="relative"
+              transition={{ duration: 0.6 }}
+              className="relative group"
             >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <img src={whatsappImg} alt="WhatsApp Automation" className="w-full h-auto" />
+              <div className="absolute -inset-4 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-3xl blur-3xl opacity-0 group-hover:opacity-50 transition-opacity duration-500" />
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl ring-1 ring-border/50 group-hover:shadow-[0_20px_80px_-15px_rgba(34,197,94,0.3)] transition-all duration-500">
+                <img src={whatsappImg} alt="WhatsApp Automation" className="w-full h-auto group-hover:scale-105 transition-transform duration-700" />
                 <div className="image-overlay" />
               </div>
             </motion.div>
@@ -398,37 +437,73 @@ const Index = () => {
       <section className="section-padding">
         <div className="container mx-auto max-w-5xl">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-16 text-center"
+            className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-primary/10 via-accent/5 to-transparent p-16 md:p-20 text-center border border-primary/20"
           >
-            <div className="relative z-10 space-y-8">
-              <h2 className="text-5xl md:text-6xl font-bold">
-                Müşteri Değerini
-                <br />
-                <span className="text-primary">Bugün Artır</span>
-              </h2>
-              
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Flow kampanyaları ile her tipte müşteriyi geri kazan. 
-                Daha fazla gelir, daha az iş yükü.
-              </p>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(139,92,246,0.1),transparent)]" />
+            
+            <div className="relative z-10 space-y-10">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                <h2 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
+                  Müşteri Değerini
+                  <br />
+                  <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+                    Bugün Artır
+                  </span>
+                </h2>
+                
+                <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                  Flow kampanyaları ile her tipte müşteriyi geri kazan. 
+                  <span className="text-foreground font-medium"> Daha fazla gelir, daha az iş yükü.</span>
+                </p>
+              </motion.div>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                <Button size="lg" className="text-lg px-10 h-14 rounded-2xl group">
-                  <Rocket className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                className="flex flex-col sm:flex-row items-center justify-center gap-6"
+              >
+                <Button size="lg" className="text-lg px-12 h-16 rounded-2xl group shadow-lg hover:shadow-2xl transition-all duration-300">
+                  <Rocket className="w-5 h-5 mr-2 group-hover:translate-y-[-2px] transition-transform" />
                   Ücretsiz Dene
                 </Button>
-                <Button size="lg" variant="outline" className="text-lg px-10 h-14 rounded-2xl">
+                <Button size="lg" variant="outline" className="text-lg px-12 h-16 rounded-2xl border-2 hover:bg-white transition-all duration-300">
                   <MessageSquare className="w-5 h-5 mr-2" />
                   Demo Talep Et
                 </Button>
-              </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6 }}
+                className="flex items-center justify-center gap-8 pt-8 text-sm text-muted-foreground"
+              >
+                <div className="flex items-center gap-2">
+                  <Check className="w-5 h-5 text-primary" />
+                  <span>Kredi kartı gerektirmez</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Check className="w-5 h-5 text-primary" />
+                  <span>5 dakikada kurulum</span>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };
