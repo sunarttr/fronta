@@ -1,7 +1,13 @@
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
-import { Phone, MessageSquare, Users, ShoppingBag, Sparkles, CheckCircle2, ArrowRight, Zap, TrendingUp, Target, Repeat, Gift, Heart, Star, ShoppingCart, Calendar, Mail, Check, Briefcase, Play, Rocket } from "lucide-react";
+import { Sparkles, Zap, TrendingUp, Gift, Heart, Star, ShoppingCart, Calendar, Check, Play, Rocket, ArrowRight, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ecommerceImg from "@/assets/ecommerce-workspace.jpg";
+import whatsappImg from "@/assets/whatsapp-automation.jpg";
+import crmImg from "@/assets/crm-dashboard.jpg";
+import hotelImg from "@/assets/hotel-reception.jpg";
+import beautyImg from "@/assets/beauty-salon.jpg";
+import aiCallImg from "@/assets/ai-call-center.jpg";
 
 const Index = () => {
   return (
@@ -66,268 +72,361 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Flow Types Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-white to-blue-50/30">
+      {/* Flow Types - Clean Grid */}
+      <section className="section-padding bg-secondary/30">
         <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-12 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-              Her Senaryoya Özel
-              <br />
-              <span className="text-gradient">Flow Kampanyaları</span>
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-5xl font-bold">
+              Her Senaryoya Özel <span className="text-primary">Flow Kampanyaları</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              AI destekli flow'lar, her müşteri davranışına otomatik yanıt verir
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              AI destekli otomatik kampanyalar, her müşteri davranışına anında yanıt verir
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 icon: ShoppingCart,
-                title: "Sepet Kurtarma Flow",
-                description: "Sepeti terk eden müşterilere otomatik hatırlatma ve özel indirim",
-                metric: "%30 sepet kurtarma oranı",
-              },
-              {
-                icon: Users,
-                title: "Winback Flow",
-                description: "60+ gün inaktif müşterileri geri kazanma kampanyası",
-                metric: "%22 geri dönüş oranı",
-              },
-              {
-                icon: Gift,
-                title: "İlk Alışveriş Flow",
-                description: "Yeni müşterilere özel karşılama ve teşvik mesajları",
-                metric: "%35 ikinci sipariş",
+                title: "Sepet Kurtarma",
+                description: "Sepeti terk eden müşterilere otomatik hatırlatma ve özel indirim gönderin",
+                metric: "%30 kurtarma",
+                gradient: "from-purple-500/10 to-blue-500/10"
               },
               {
                 icon: Heart,
-                title: "Sadakat Flow",
-                description: "Sadık müşterilere özel ödüller ve VIP avantajlar",
-                metric: "%40 LTV artışı",
+                title: "Winback Flow",
+                description: "60+ gün inaktif müşterileri geri kazanma kampanyası",
+                metric: "%22 geri dönüş",
+                gradient: "from-pink-500/10 to-rose-500/10"
               },
               {
-                icon: Calendar,
-                title: "Doğum Günü Flow",
-                description: "Müşterilere özel gün kutlaması ve hediye kampanyaları",
-                metric: "%45 açılma oranı",
+                icon: Gift,
+                title: "İlk Alışveriş",
+                description: "Yeni müşterilere özel karşılama ve teşvik mesajları",
+                metric: "%35 ikinci sipariş",
+                gradient: "from-orange-500/10 to-amber-500/10"
               },
               {
                 icon: Star,
-                title: "Yeniden Satın Alma Flow",
-                description: "Ürün tükenme tahmini ile otomatik hatırlatma",
+                title: "Sadakat Flow",
+                description: "Sadık müşterilere özel ödüller ve VIP avantajlar sunun",
+                metric: "%40 LTV artışı",
+                gradient: "from-yellow-500/10 to-orange-500/10"
+              },
+              {
+                icon: Calendar,
+                title: "Doğum Günü",
+                description: "Müşterilere özel gün kutlaması ve hediye kampanyaları",
+                metric: "%45 açılma",
+                gradient: "from-blue-500/10 to-cyan-500/10"
+              },
+              {
+                icon: TrendingUp,
+                title: "Yeniden Satın Alma",
+                description: "Ürün tükenme tahmini ile otomatik hatırlatma sistemi",
                 metric: "%28 tekrar satış",
+                gradient: "from-green-500/10 to-emerald-500/10"
               },
             ].map((flow, index) => (
-              <div 
-                key={index} 
-                className="glass glass-hover p-6 rounded-2xl group cursor-pointer"
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="feature-card"
               >
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${flow.gradient} flex items-center justify-center mb-6`}>
                   <flow.icon className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-foreground">{flow.title}</h3>
-                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">{flow.description}</p>
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/5 border border-primary/10">
-                  <TrendingUp className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-semibold text-primary">{flow.metric}</span>
+                <h3 className="text-2xl font-bold mb-3">{flow.title}</h3>
+                <p className="text-muted-foreground mb-4 leading-relaxed">{flow.description}</p>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+                  <TrendingUp className="w-4 h-4" />
+                  {flow.metric}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Platform Features */}
-      <section className="py-20 px-4 bg-white">
+      {/* Platform Features - Image Showcase */}
+      <section className="section-padding">
         <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-12 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-              <span className="text-gradient">Tek Platform</span>, Tüm Kanallar
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              WhatsApp, SMS ve Email ile müşterilerine her kanaldan ulaş
-            </p>
-          </div>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              <h2 className="text-5xl font-bold">
+                <span className="text-primary">WhatsApp Business</span>
+                <br />
+                Resmi API Entegrasyonu
+              </h2>
+              
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Müşterilerinize en sevdikleri kanaldan ulaşın. WhatsApp Business API 
+                ile güvenli, hızlı ve etkili iletişim.
+              </p>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="glass glass-hover p-8 rounded-2xl space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center">
-                  <MessageSquare className="w-7 h-7 text-accent" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-foreground">WhatsApp Business</h3>
-                  <p className="text-muted-foreground text-sm">Resmi API entegrasyonu</p>
-                </div>
-              </div>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {[
                   "Resmi Business API ile güvenli iletişim",
-                  "Otomatik yanıtlayıcı ve chatbot desteği",
-                  "Multimedya mesaj gönderimi",
-                  "Anlık teslimat ve okundu bilgisi"
+                  "Otomatik yanıtlayıcı ve AI chatbot desteği",
+                  "Multimedya mesaj gönderimi (görsel, video, dosya)",
+                  "Anlık teslimat ve okundu bilgisi",
                 ].map((feature, i) => (
-                  <li key={i} className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <Check className="w-3 h-3 text-accent" />
+                  <li key={i} className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                      <Check className="w-4 h-4 text-primary" />
                     </div>
-                    <span className="text-muted-foreground text-sm">{feature}</span>
+                    <span className="text-lg">{feature}</span>
                   </li>
                 ))}
               </ul>
-            </div>
 
-            <div className="glass glass-hover p-8 rounded-2xl space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <Mail className="w-7 h-7 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-foreground">SMS & Email</h3>
-                  <p className="text-muted-foreground text-sm">Çoklu kanal yönetimi</p>
+              <Button size="lg" className="text-lg px-8 h-14 rounded-2xl group">
+                Daha Fazla Bilgi
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <img src={whatsappImg} alt="WhatsApp Automation" className="w-full h-auto" />
+                <div className="image-overlay" />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* SMS & Email Section */}
+      <section className="section-padding bg-secondary/30">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative order-2 lg:order-1"
+            >
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <img src={crmImg} alt="CRM Dashboard" className="w-full h-auto" />
+                <div className="image-overlay" />
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-8 order-1 lg:order-2"
+            >
+              <h2 className="text-5xl font-bold">
+                <span className="text-primary">SMS & Email</span>
+                <br />
+                Çoklu Kanal Yönetimi
+              </h2>
+              
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Tüm iletişim kanallarını tek platformdan yönetin. Profesyonel 
+                şablonlar ve detaylı analizlerle kampanyalarınızı optimize edin.
+              </p>
+
+              <ul className="space-y-4">
+                {[
+                  "Toplu SMS gönderimi ve detaylı raporlama",
+                  "Profesyonel email şablonları ve editör",
+                  "A/B test ve kampanya optimizasyonu",
+                  "Anlık istatistik ve performans analizleri",
+                ].map((feature, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                      <Check className="w-4 h-4 text-primary" />
+                    </div>
+                    <span className="text-lg">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sectoral Solutions - Photo Grid */}
+      <section className="section-padding">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-5xl font-bold">
+              Her Sektöre <span className="text-primary">Özel Çözümler</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              İşletmenizin ihtiyaçlarına göre özelleştirilmiş flow kampanyaları
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="feature-card"
+            >
+              <div className="relative h-64 rounded-2xl overflow-hidden mb-6">
+                <img src={hotelImg} alt="Otel Resepsiyon" className="w-full h-full object-cover" />
+                <div className="image-overlay" />
+                <div className="absolute bottom-6 left-6">
+                  <h3 className="text-3xl font-bold text-white">Otelcilik & Konaklama</h3>
                 </div>
               </div>
               <ul className="space-y-3">
                 {[
-                  "Toplu SMS gönderimi ve raporlama",
-                  "Profesyonel email şablonları",
-                  "A/B test ve optimizasyon",
-                  "Anlık istatistik ve analizler"
+                  "Rezervasyon hatırlatma ve onay sistemi",
+                  "Misafir memnuniyeti takibi",
+                  "Check-in/out otomasyonu",
+                  "Özel gün kutlama kampanyaları"
                 ].map((feature, i) => (
-                  <li key={i} className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Check className="w-3 h-3 text-primary" />
-                    </div>
-                    <span className="text-muted-foreground text-sm">{feature}</span>
+                  <li key={i} className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+            </motion.div>
 
-      {/* Integrations */}
-      <section className="py-20 px-4 bg-gradient-to-b from-blue-50/30 to-white">
-        <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-12 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-              Tüm <span className="text-gradient">E-ticaret</span> Platformlarıyla
-              <br />
-              <span className="text-gradient">Entegre</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Kullandığın sisteme dakikalar içinde bağlan
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {[
-              "Shopify",
-              "WooCommerce", 
-              "Magento",
-              "PrestaShop",
-              "OpenCart",
-              "İdeasoft",
-              "Ticimax",
-              "T-Soft",
-            ].map((platform, index) => (
-              <div 
-                key={index}
-                className="glass glass-hover p-6 rounded-xl text-center group cursor-pointer"
-              >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 mx-auto mb-3 flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <Zap className="w-6 h-6 text-primary" />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="feature-card"
+            >
+              <div className="relative h-64 rounded-2xl overflow-hidden mb-6">
+                <img src={beautyImg} alt="Güzellik Salonu" className="w-full h-full object-cover" />
+                <div className="image-overlay" />
+                <div className="absolute bottom-6 left-6">
+                  <h3 className="text-3xl font-bold text-white">Güzellik & Sağlık</h3>
                 </div>
-                <h4 className="font-semibold text-foreground text-sm">{platform}</h4>
               </div>
-            ))}
+              <ul className="space-y-3">
+                {[
+                  "Randevu hatırlatma ve onaylama",
+                  "Müşteri geri kazanma kampanyaları",
+                  "Sadakat programı yönetimi",
+                  "Sezonluk promosyon otomasyonu"
+                ].map((feature, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Sectoral Solutions */}
-      <section className="py-20 px-4 bg-white">
+      {/* AI Call Center Showcase */}
+      <section className="section-padding bg-secondary/30">
         <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-12 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-              <span className="text-gradient">Sektörel</span> Çözümler
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Her sektörün ihtiyacına özel flow kampanyaları
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                icon: ShoppingBag,
-                title: "E-Ticaret & Perakende",
-                features: [
-                  "Sepet kurtarma flow'ları",
-                  "Ürün tavsiye otomasyonu",
-                  "Stok bildirim sistemi",
-                  "Sezonluk kampanya yönetimi"
-                ]
-              },
-              {
-                icon: Briefcase,
-                title: "Hizmet & Profesyonel",
-                features: [
-                  "Randevu hatırlatma sistemi",
-                  "Müşteri geri kazanma flow'u",
-                  "Referans ödül programı",
-                  "Özel gün kutlama otomasyonu"
-                ]
-              }
-            ].map((sector, index) => (
-              <div key={index} className="glass glass-hover p-8 rounded-2xl space-y-6 group">
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-105 transition-transform">
-                    <sector.icon className="w-7 h-7 text-primary" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-foreground">{sector.title}</h3>
-                </div>
-                <ul className="space-y-3">
-                  {sector.features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-primary" />
-                      </div>
-                      <span className="text-muted-foreground text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+                <Sparkles className="w-4 h-4 text-primary" />
+                <span className="text-sm font-medium text-primary">AI Powered</span>
               </div>
-            ))}
+
+              <h2 className="text-5xl font-bold">
+                <span className="text-primary">AI Çağrı Merkezi</span>
+                <br />
+                Otomasyonu
+              </h2>
+              
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Yapay zeka destekli çağrı merkezi ile müşteri hizmetlerini 
+                otomatikleştirin. 7/24 kesintisiz hizmet sunun.
+              </p>
+
+              <div className="grid grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <div className="text-4xl font-bold text-primary">%60</div>
+                  <div className="text-sm text-muted-foreground">Maliyet Azalması</div>
+                </div>
+                <div className="space-y-2">
+                  <div className="text-4xl font-bold text-primary">24/7</div>
+                  <div className="text-sm text-muted-foreground">Kesintisiz Hizmet</div>
+                </div>
+              </div>
+
+              <Button size="lg" className="text-lg px-8 h-14 rounded-2xl group">
+                Daha Fazla Bilgi
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <img src={aiCallImg} alt="AI Call Center" className="w-full h-auto" />
+                <div className="image-overlay" />
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-20 px-4 bg-gradient-to-b from-white to-blue-50/30">
-        <div className="container mx-auto max-w-4xl">
-          <div className="glass p-12 rounded-2xl text-center space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-              Müşteri Değerini
-              <br />
-              <span className="text-gradient">Bugün Artır</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Flow kampanyaları ile her tipte müşteriyi geri kazan. %30 daha fazla gelir, %45 daha az iş yükü.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              <Button size="lg" className="button-gradient text-lg px-10 py-6 rounded-xl font-semibold group">
-                <Rocket className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
-                Ücretsiz Dene
-              </Button>
-              <Button size="lg" variant="outline" className="text-lg px-10 py-6 rounded-xl border-2 hover:bg-secondary font-semibold">
-                <Users className="w-5 h-5 mr-2" />
-                Demo Talep Et
-              </Button>
+      {/* Final CTA - Clean & Minimal */}
+      <section className="section-padding">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-16 text-center"
+          >
+            <div className="relative z-10 space-y-8">
+              <h2 className="text-5xl md:text-6xl font-bold">
+                Müşteri Değerini
+                <br />
+                <span className="text-primary">Bugün Artır</span>
+              </h2>
+              
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Flow kampanyaları ile her tipte müşteriyi geri kazan. 
+                Daha fazla gelir, daha az iş yükü.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <Button size="lg" className="text-lg px-10 h-14 rounded-2xl group">
+                  <Rocket className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
+                  Ücretsiz Dene
+                </Button>
+                <Button size="lg" variant="outline" className="text-lg px-10 h-14 rounded-2xl">
+                  <MessageSquare className="w-5 h-5 mr-2" />
+                  Demo Talep Et
+                </Button>
+              </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>
